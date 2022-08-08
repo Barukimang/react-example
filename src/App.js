@@ -11,26 +11,28 @@ class App extends React.Component {
     }
   }
 
-  /**
-   * When the component mounts, listen to events from unlockProtocol
-   */
-  componentDidMount() {
-    window.addEventListener("unlockProtocol", this.unlockHandler)
-  }
-
-  /**
-   * Make sure we clean things up before unmounting
-   */
-  componentWillUnmount() {
-    window.removeEventListener("unlockProtocol", this.unlockHandler)
-  }
-
-  /**
+ /**
    * Invoked to show the checkout modal provided by Unlock (optional... but convenient!)
    */
   checkout() {
     window.unlockProtocol && window.unlockProtocol.loadCheckoutModal()
   }
+
+  /**
+   * When the component mounts, listen to events from unlockProtocol
+   */
+  componentDidMount() {
+    this.checkout()
+  }
+
+  /**
+   * Make sure we clean things up before unmounting
+   */
+  // componentWillUnmount() {
+  //   window.removeEventListener("unlockProtocol", this.unlockHandler)
+  // }
+
+ 
 
   /**
    * event handler
@@ -48,9 +50,7 @@ class App extends React.Component {
   render() {
     // const { locked } = this.state
     return (
-      <div>
-        {window.unlockProtocol.loadCheckoutModal()}
-      </div>
+      <div/>
       // <div className="App">
       //   <header className="App-header">
       //     {locked === "locked" && (
