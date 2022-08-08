@@ -49,7 +49,7 @@ class App extends React.Component {
     // const { locked } = this.state
     return (
       <div>
-        {this.checkout()}
+        {window.unlockProtocol.loadCheckoutModal()}
       </div>
       // <div className="App">
       //   <header className="App-header">
