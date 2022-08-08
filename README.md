@@ -39,6 +39,13 @@ In the public/index.html you will find an Unlock configuration object.
       "callToAction": {
         "default": "Please unlock this demo!"
       }
+      "metadataInputs": [
+        {
+            "name": "Name",
+            "type": "text",
+            "required": true
+        }
+    ]
     }
 </script>
 ```
